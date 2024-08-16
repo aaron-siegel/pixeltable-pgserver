@@ -32,6 +32,10 @@ jobs:
             arch: AMD64
             deployment-target: ''
     steps:
+      - name: Show info
+        run: |
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "github.ref: ${{ github.ref }}"
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         if: matrix.os != 'ubuntu-latest'
